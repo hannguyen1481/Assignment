@@ -133,7 +133,7 @@ void startGame()
     {
         for (int j = 0; j < MAX_SIZE; j++)
         {
-            game[i][j] = NA; // tat ca cac o trong co gia tri la NA
+            game[i][j] = NA; 
         }
     }
     displayBoard(game, MAX_SIZE); 
