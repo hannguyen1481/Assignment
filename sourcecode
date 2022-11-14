@@ -35,7 +35,7 @@ struct Move
 {
     int row;
     int col;
-    enum Stone stone; // Khai bao enum Stone, bien la stone
+    enum Stone stone;
 };
 
 static char *lineString(char left, char mid, char right, char horz, int wcell, int ncell)
@@ -136,16 +136,16 @@ void startGame()
             game[i][j] = NA; // tat ca cac o trong co gia tri la NA
         }
     }
-    displayBoard(game, MAX_SIZE); // goi ham displayBoard
-    char playerMove[50];          // khai bao chuoi playMove co 50 phan tu
-    bool player1Turn = true;      // gan luot cua nguoi choi 1 la true
+    displayBoard(game, MAX_SIZE); 
+    char playerMove[50];          
+    bool player1Turn = true;      
     printf("Player 1 turn: ");
-    while (true) // vong lap tiep tuc cho den khi gap break
+    while (true) 
     {
         scanf("%s", playerMove);
         if (strcmp(playerMove, "ff") == 0)
-        {                                                                      // so sanh playerMove = "ff" ?? thi kiem tra dieu kien
-            printf("%s", ((player1Turn) ? "Player 2 won " : "Player 1 won ")); // Co phai luot nguoi 1 ko? Dung thi nguoi 2 won
+        {                                                                     
+            printf("%s", ((player1Turn) ? "Player 2 won " : "Player 1 won ")); 
             break;
         }
         else if (makeMove(game, MAX_SIZE, playerMove, player1Turn))
@@ -153,12 +153,12 @@ void startGame()
             if (hasWon(game, MAX_SIZE, player1Turn))
             {
                 displayBoard(game, MAX_SIZE);
-                printf("%s", ((player1Turn) ? "Player 1 won " : "Player 2 won ")); // Co phai luot nguoi 1 ko? Dung thi nguoi 1 won
-                return;                                                            // ket thuc chuong trinh
+                printf("%s", ((player1Turn) ? "Player 1 won " : "Player 2 won ")); 
+                return;                                                           
             }
             player1Turn = !player1Turn; // neu khong phai luot nguoi 1?
             displayBoard(game, MAX_SIZE);
-            printf("%s", ((player1Turn) ? "Player 1 turn: " : "Player 2 turn: ")); // co phai luot nguoi 1 khong? co thi la luot nguoi 1
+            printf("%s", ((player1Turn) ? "Player 1 turn: " : "Player 2 turn: ")); 
         }
         else
         {
