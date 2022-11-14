@@ -128,7 +128,7 @@ void displayHistory(char *history, int numOfMoves)
 
 void startGame()
 {
-    enum Stone game[15][15]; // game la mang 15 hang 15 cot
+    enum Stone game[15][15]; 
     for (int i = 0; i < MAX_SIZE; i++)
     {
         for (int j = 0; j < MAX_SIZE; j++)
