@@ -156,7 +156,7 @@ void startGame()
                 printf("%s", ((player1Turn) ? "Player 1 won " : "Player 2 won ")); 
                 return;                                                           
             }
-            player1Turn = !player1Turn; // neu khong phai luot nguoi 1?
+            player1Turn = !player1Turn;
             displayBoard(game, MAX_SIZE);
             printf("%s", ((player1Turn) ? "Player 1 turn: " : "Player 2 turn: ")); 
         }
